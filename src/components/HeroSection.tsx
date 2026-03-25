@@ -16,7 +16,7 @@ const HeroSection = () => {
       </div>
 
       {/* Headline */}
-      <p className="heading-serif text-2xl md:text-4xl lg:text-5xl text-foreground mb-6 animate-[fadeUp_2s_ease-out_0.6s_both]">
+      <p className="heading-serif text-2xl md:text-4xl lg:text-5xl text-foreground mb-6 animate-[fadeUp_2s_ease-out_0.4s_both]">
         {t("hero.headline1")}
         <br />
         {t("hero.headline2")}
