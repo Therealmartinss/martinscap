@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center section-narrow text-center">
       {/* Logo — 3x larger */}
-      <div className="logo-shimmer mb-10 animate-[fadeUp_2s_ease-out_both]">
+      <div className="logo-shimmer mb-14 animate-[fadeUp_2s_ease-out_both]">
         <img
           src={mcMonogram}
           alt="Martins Capital Monogram"
