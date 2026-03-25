@@ -19,14 +19,14 @@ const HeroSection = () => {
 
       {/* Company Name */}
       <h1
-        className="heading-serif text-primary tracking-[0.2em] text-sm md:text-base mb-20 animate-[fadeUp_2s_ease-out_0.3s_both]"
+        className="heading-serif text-primary tracking-[0.12em] text-lg md:text-2xl mb-14 animate-[fadeUp_2s_ease-out_0.3s_both]"
         style={{ textTransform: "uppercase" }}
       >
         {t("hero.company")}
       </h1>
 
       {/* Headline */}
-      <p className="heading-serif text-2xl md:text-4xl lg:text-5xl text-foreground mb-8 animate-[fadeUp_2s_ease-out_0.6s_both]">
+      <p className="heading-serif text-2xl md:text-4xl lg:text-5xl text-foreground mb-6 animate-[fadeUp_2s_ease-out_0.6s_both]">
         {t("hero.headline1")}
         <br />
         {t("hero.headline2")}
