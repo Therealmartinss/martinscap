@@ -23,7 +23,7 @@ const HeroSection = () => {
       </p>
 
       {/* Subheadline */}
-      <p className="text-muted-foreground text-sm md:text-base max-w-2xl leading-relaxed animate-[fadeUp_2s_ease-out_0.9s_both]">
+      <p className="text-muted-foreground text-sm md:text-base max-w-2xl leading-relaxed animate-[fadeUp_2s_ease-out_0.7s_both]">
         {t("hero.sub")}
       </p>
 
