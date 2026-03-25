@@ -21,22 +21,22 @@ const StrategicDomains = () => {
         <div className="gold-line mx-auto mb-16 reveal" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {domains.map((d, i) => (
-            <div key={i} className="reveal relative overflow-hidden rounded-sm group min-h-[200px]">
-              {/* Background image with offset positioning */}
+            <div key={i} className="reveal relative overflow-hidden rounded-sm group min-h-[240px]">
+              {/* Background image — high clarity */}
               <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{
                   backgroundImage: `url(${d.img})`,
                   backgroundSize: "cover",
                   backgroundPosition: i % 2 === 0 ? "30% center" : "70% center",
-                  opacity: 0.30,
-                  filter: "blur(0.5px) contrast(1.1)",
+                  opacity: 0.9,
+                  filter: "contrast(1.15) saturate(0.85)",
                 }}
               />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-background/55" />
+              {/* Subtle dark overlay for text contrast */}
+              <div className="absolute inset-0 bg-background/40" />
               {/* Bottom gradient for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-background/20" />
               <div className="relative z-10 py-8 px-4">
                 <h3 className="heading-serif text-base text-foreground mb-3 tracking-wider">
                   {d.title}
