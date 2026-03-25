@@ -1,48 +1,49 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 import TexturedBackground from "@/components/TexturedBackground";
 import HeroSection from "@/components/HeroSection";
 import SectionBlock from "@/components/SectionBlock";
 import CoreFunctions from "@/components/CoreFunctions";
 import StrategicDomains from "@/components/StrategicDomains";
+import PrivateMarketBriefing from "@/components/PrivateMarketBriefing";
 import Footer from "@/components/Footer";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Index = () => {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <div className="relative min-h-screen">
       <TexturedBackground />
+      <LanguageToggle />
 
       <div className="relative z-10">
         <HeroSection />
 
-        <SectionBlock label="What We Are">
+        <SectionBlock label={t("section.whatWeAre")}>
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            Martins Capital operates as a central command structure, overseeing
-            and coordinating multiple companies through disciplined capital
-            management and strategic control.
+            {t("whatWeAre.text")}
           </p>
         </SectionBlock>
 
-        <SectionBlock label="Mission">
+        <SectionBlock label={t("section.mission")}>
           <p className="heading-serif text-lg md:text-xl text-foreground leading-relaxed max-w-2xl mx-auto italic">
-            "To centralize control and optimize capital across multiple
-            businesses, ensuring efficiency, resilience, and long-term growth."
+            {t("mission.text")}
           </p>
         </SectionBlock>
 
-        <SectionBlock label="Vision">
+        <SectionBlock label={t("section.vision")}>
           <p className="heading-serif text-lg md:text-xl text-foreground leading-relaxed max-w-2xl mx-auto italic">
-            "To build an integrated ecosystem of companies operating under a
-            unified strategic and financial architecture."
+            {t("vision.text")}
           </p>
         </SectionBlock>
 
-        <SectionBlock label="Purpose">
+        <SectionBlock label={t("section.purpose")}>
           <div className="heading-serif text-lg md:text-xl text-foreground leading-relaxed max-w-2xl mx-auto space-y-2">
-            <p>To create structure where there is fragmentation.</p>
-            <p>To bring intelligence to capital allocation.</p>
-            <p>To build systems that compound value across generations.</p>
+            <p>{t("purpose.line1")}</p>
+            <p>{t("purpose.line2")}</p>
+            <p>{t("purpose.line3")}</p>
           </div>
         </SectionBlock>
 
@@ -54,14 +55,16 @@ const Index = () => {
           <div className="py-8">
             <div className="gold-line mx-auto mb-12" />
             <p className="heading-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed max-w-2xl mx-auto">
-              True wealth is not managed.
+              {t("closing.line1")}
               <br />
               <span className="text-primary">
-                It is structured, controlled, and compounded.
+                {t("closing.line2")}
               </span>
             </p>
           </div>
         </SectionBlock>
+
+        <PrivateMarketBriefing />
 
         <Footer />
       </div>
