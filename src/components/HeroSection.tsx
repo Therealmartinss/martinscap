@@ -11,7 +11,7 @@ const HeroSection = () => {
         <img
           src={mcLogoFull}
           alt="Martins Capital"
-          className="mx-auto w-[340px] md:w-[480px] lg:w-[580px] h-auto"
+          className="mx-auto w-[420px] md:w-[580px] lg:w-[720px] h-auto"
         />
       </div>
 
