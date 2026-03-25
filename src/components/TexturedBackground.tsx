@@ -9,7 +9,7 @@ const TexturedBackground = () => (
         backgroundImage: `url(${marbleTexture})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        opacity: 0.5,
+        opacity: 0.7,
       }}
     />
     {/* Gradient overlay */}
