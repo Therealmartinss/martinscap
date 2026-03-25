@@ -7,11 +7,11 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center section-narrow text-center">
       {/* Full Logo — monogram + brand name */}
-      <div className="logo-shimmer mb-16 animate-[fadeUp_2s_ease-out_both]">
+      <div className="mb-16 animate-[fadeUp_2s_ease-out_both]">
         <img
           src={mcLogoFull}
           alt="Martins Capital"
-          className="mx-auto w-[280px] md:w-[400px] lg:w-[480px] h-auto"
+          className="mx-auto w-[340px] md:w-[480px] lg:w-[580px] h-auto"
         />
       </div>
 
