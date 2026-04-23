@@ -39,18 +39,18 @@ const TopNav = () => {
           : "bg-transparent",
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
         {/* Brand */}
         <Link
           to="/"
-          className="heading-serif-sm text-foreground hover:text-primary transition-colors duration-500 tracking-[0.25em]"
+          className="heading-serif-sm text-foreground hover:text-primary transition-colors duration-700 tracking-[0.32em] text-[11px]"
           aria-label="Martins Capital — Home"
         >
           MARTINS <span className="text-primary">CAPITAL</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-12">
           {links.map((l) => {
             const isActive =
               l.to === "/" ? location.pathname === "/" : location.pathname.startsWith(l.to);
@@ -58,13 +58,13 @@ const TopNav = () => {
               <Link
                 key={l.to}
                 to={l.to}
-                className="group relative heading-serif-sm tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-500"
+                className="group relative heading-serif-sm tracking-[0.24em] text-[10.5px] text-muted-foreground/80 hover:text-foreground transition-colors duration-700"
               >
                 <span className={cn(isActive && "text-foreground")}>{l.label}</span>
                 <span
                   className={cn(
-                    "pointer-events-none absolute -bottom-1 left-0 h-px bg-primary transition-all duration-500",
-                    isActive ? "w-full opacity-60" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-60",
+                    "pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 h-px bg-primary transition-all duration-700",
+                    isActive ? "w-6 opacity-80" : "w-0 opacity-0 group-hover:w-6 group-hover:opacity-80",
                   )}
                 />
               </Link>
@@ -73,23 +73,23 @@ const TopNav = () => {
         </nav>
 
         {/* Right cluster: language + mobile menu trigger */}
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-center gap-1 heading-serif-sm">
+        <div className="flex items-center gap-5">
+          <div className="hidden sm:flex items-center gap-2 heading-serif-sm text-[10.5px]">
             <button
               onClick={() => setLang("en")}
               className={cn(
-                "px-2 py-1 transition-colors duration-300",
-                lang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                "px-1 py-1 transition-colors duration-500",
+                lang === "en" ? "text-primary" : "text-muted-foreground/60 hover:text-foreground",
               )}
             >
               EN
             </button>
-            <span className="text-muted-foreground/40">|</span>
+            <span className="text-muted-foreground/30">/</span>
             <button
               onClick={() => setLang("pt")}
               className={cn(
-                "px-2 py-1 transition-colors duration-300",
-                lang === "pt" ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                "px-1 py-1 transition-colors duration-500",
+                lang === "pt" ? "text-primary" : "text-muted-foreground/60 hover:text-foreground",
               )}
             >
               PT
@@ -101,7 +101,7 @@ const TopNav = () => {
             aria-label="Toggle menu"
             aria-expanded={open}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={20} strokeWidth={1.25} /> : <Menu size={20} strokeWidth={1.25} />}
           </button>
         </div>
       </div>
