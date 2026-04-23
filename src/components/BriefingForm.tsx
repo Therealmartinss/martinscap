@@ -37,31 +37,28 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
       setError(t("briefing.error"));
       return;
     }
-    // Lead capture: ready to wire to Lovable Cloud later
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <div className={cn("reveal text-center py-10", className)}>
-        <p className="heading-serif text-xl md:text-2xl text-primary leading-relaxed max-w-lg mx-auto">
+      <div className={cn("reveal text-center py-14", className)}>
+        <div className="gold-line mx-auto mb-8 opacity-60" />
+        <p className="heading-display text-2xl md:text-[32px] text-primary leading-[1.2] max-w-lg mx-auto">
           {t("briefing.success")}
         </p>
-        <p className="text-muted-foreground text-sm mt-4 max-w-md mx-auto">
+        <p className="body-refined text-sm mt-6 max-w-md mx-auto">
           {t("briefing.successSub")}
         </p>
       </div>
     );
   }
 
-  const inputCls =
-    "w-full bg-transparent border-b border-border/60 text-foreground text-sm py-3 px-1 placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300";
-
   return (
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "reveal mx-auto space-y-6",
+        "reveal mx-auto space-y-7",
         variant === "full" ? "max-w-md" : "max-w-sm",
         className,
       )}
@@ -74,7 +71,7 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
         onChange={(e) => setFirstName(e.target.value)}
         required
         maxLength={80}
-        className={inputCls}
+        className="input-premium"
       />
       <input
         type="email"
@@ -83,13 +80,13 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
         onChange={(e) => setEmail(e.target.value)}
         required
         maxLength={255}
-        className={inputCls}
+        className="input-premium"
       />
       <select
         value={interest}
         onChange={(e) => setInterest(e.target.value)}
         required
-        className={cn(inputCls, "appearance-none cursor-pointer")}
+        className={cn("input-premium appearance-none cursor-pointer", !interest && "text-muted-foreground/40")}
       >
         <option value="" disabled className="bg-background">
           {t("briefing.interestPlaceholder")}
@@ -101,12 +98,9 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
         ))}
       </select>
       {error && (
-        <p className="text-destructive text-xs tracking-wide">{error}</p>
+        <p className="text-destructive text-xs tracking-[0.18em] uppercase">{error}</p>
       )}
-      <button
-        type="submit"
-        className="w-full mt-2 py-4 heading-serif-sm text-primary border border-primary/30 bg-transparent hover:bg-primary/5 transition-all duration-500 tracking-[0.25em]"
-      >
+      <button type="submit" className="btn-premium w-full mt-4">
         {t("briefing.cta")}
       </button>
     </form>
