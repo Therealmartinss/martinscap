@@ -45,27 +45,27 @@ const Technology = () => {
       </section>
 
       <section className="section-spacing">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           <div className="reveal">
-            <p className="heading-serif-sm text-primary mb-5">{t("tech.focus.eyebrow")}</p>
-            <div className="gold-line mb-8" />
-            <ul className="space-y-5">
+            <p className="heading-serif-sm text-primary mb-6">{t("tech.focus.eyebrow")}</p>
+            <div className="gold-line mb-10" />
+            <ul className="space-y-6">
               {focus.map((f) => (
-                <li key={f} className="flex items-start gap-4">
-                  <span className="text-primary heading-serif-sm pt-1">—</span>
-                  <span className="heading-serif text-lg text-foreground tracking-wide">{f}</span>
+                <li key={f} className="group flex items-baseline gap-5 pb-5 border-b border-border/20">
+                  <span className="text-primary/60 heading-serif-sm text-[10px] transition-colors duration-500 group-hover:text-primary">—</span>
+                  <span className="heading-serif text-[19px] md:text-[21px] text-foreground tracking-wide">{f}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div className="reveal" style={{ transitionDelay: "120ms" }}>
-            <p className="heading-serif-sm text-primary mb-5">{t("tech.engage.eyebrow")}</p>
-            <div className="gold-line mb-8" />
-            <ul className="space-y-5">
+            <p className="heading-serif-sm text-primary mb-6">{t("tech.engage.eyebrow")}</p>
+            <div className="gold-line mb-10" />
+            <ul className="space-y-6">
               {engage.map((f) => (
-                <li key={f} className="flex items-start gap-4">
-                  <span className="text-primary heading-serif-sm pt-1">—</span>
-                  <span className="heading-serif text-lg text-foreground tracking-wide">{f}</span>
+                <li key={f} className="group flex items-baseline gap-5 pb-5 border-b border-border/20">
+                  <span className="text-primary/60 heading-serif-sm text-[10px] transition-colors duration-500 group-hover:text-primary">—</span>
+                  <span className="heading-serif text-[19px] md:text-[21px] text-foreground tracking-wide">{f}</span>
                 </li>
               ))}
             </ul>
@@ -80,12 +80,9 @@ const Technology = () => {
             title={t("tech.cta.title")}
             intro={t("tech.cta.body")}
           />
-          <Link
-            to="/contact"
-            className="reveal inline-flex items-center gap-3 heading-serif-sm tracking-[0.25em] text-primary-foreground bg-primary px-8 py-4 hover:bg-primary/90 transition-all duration-500"
-          >
+          <Link to="/contact" className="reveal btn-premium group">
             {t("tech.cta.button")}
-            <ArrowRight size={14} />
+            <ArrowRight size={13} strokeWidth={1.25} className="transition-transform duration-700 group-hover:translate-x-1" />
           </Link>
         </div>
       </section>

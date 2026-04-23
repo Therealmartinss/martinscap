@@ -47,12 +47,12 @@ const About = () => {
       {/* Founder Perspective */}
       <section className="section-spacing">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
-          <p className="heading-serif-sm text-primary mb-6 reveal">
+          <p className="heading-serif-sm text-primary mb-7 reveal">
             {t("about.founder.eyebrow")}
           </p>
-          <div className="gold-line mx-auto mb-10 reveal" />
-          <p className="heading-serif text-xl md:text-2xl lg:text-3xl text-foreground italic leading-relaxed reveal">
-            “{t("about.founder.quote")}”
+          <div className="gold-line mx-auto mb-12 reveal" />
+          <p className="heading-display text-[22px] md:text-[30px] lg:text-[36px] text-foreground/90 italic leading-[1.4] reveal">
+            "{t("about.founder.quote")}"
           </p>
         </div>
       </section>
@@ -64,17 +64,18 @@ const About = () => {
             eyebrow={t("about.principles.eyebrow")}
             title={t("about.principles.title")}
           />
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border/40 border border-border/40">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border/30 border border-border/30">
             {principles.map((p, i) => (
               <div
                 key={p}
-                className="reveal bg-background/60 p-8 text-center min-h-[140px] flex flex-col items-center justify-center"
+                className="reveal bg-background/40 p-10 text-center min-h-[180px] flex flex-col items-center justify-center group hover:bg-card/50 transition-all duration-700 relative overflow-hidden"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <span className="heading-serif-sm text-primary mb-3 opacity-70">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-0 bg-primary/60 transition-all duration-700 group-hover:w-10" />
+                <span className="heading-serif-sm text-primary/70 mb-4 text-[10px]">
                   0{i + 1}
                 </span>
-                <p className="heading-serif text-base md:text-lg text-foreground tracking-wide">
+                <p className="heading-serif text-[17px] md:text-[19px] text-foreground tracking-wide leading-tight">
                   {p}
                 </p>
               </div>
