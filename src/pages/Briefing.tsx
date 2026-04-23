@@ -28,17 +28,17 @@ const Briefing = () => {
             eyebrow={t("briefing.receive.eyebrow")}
             title={t("briefing.receive.title")}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/40 border border-border/40 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/30 border border-border/30 max-w-3xl mx-auto">
             {receive.map((r, i) => (
               <div
                 key={r}
-                className="reveal bg-background/60 p-8 min-h-[120px] flex items-center gap-5"
+                className="reveal bg-background/40 p-10 min-h-[140px] flex items-center gap-6 group hover:bg-card/50 transition-all duration-700"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <span className="heading-serif-sm text-primary opacity-70">
+                <span className="heading-serif-sm text-primary/70 text-[10px]">
                   0{i + 1}
                 </span>
-                <p className="heading-serif text-base md:text-lg text-foreground tracking-wide">
+                <p className="heading-serif text-[17px] md:text-[19px] text-foreground tracking-wide">
                   {r}
                 </p>
               </div>
@@ -49,21 +49,21 @@ const Briefing = () => {
 
       <section className="section-spacing">
         <div className="max-w-2xl mx-auto px-6 md:px-10 text-center">
-          <p className="heading-serif-sm text-primary mb-6 reveal">
+          <p className="heading-serif-sm text-primary mb-7 reveal">
             {t("briefing.subscribe.eyebrow")}
           </p>
-          <div className="gold-line mx-auto mb-10 reveal" />
-          <h2 className="heading-serif text-2xl md:text-3xl text-foreground mb-12 reveal">
+          <div className="gold-line mx-auto mb-12 reveal" />
+          <h2 className="heading-display text-[30px] md:text-[40px] text-foreground mb-14 reveal">
             {t("briefing.subscribe.title")}
           </h2>
           <BriefingForm />
         </div>
       </section>
 
-      <section className="pb-32 pt-8">
+      <section className="pb-40 pt-12">
         <div className="max-w-2xl mx-auto px-6 md:px-10 text-center">
-          <p className="heading-serif text-lg md:text-xl italic text-muted-foreground reveal">
-            “{t("briefing.closing")}”
+          <p className="heading-display text-xl md:text-2xl italic text-muted-foreground/80 reveal leading-relaxed">
+            "{t("briefing.closing")}"
           </p>
         </div>
       </section>

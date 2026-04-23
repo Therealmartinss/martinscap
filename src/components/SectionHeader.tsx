@@ -6,17 +6,23 @@ interface SectionHeaderProps {
 }
 
 const SectionHeader = ({ eyebrow, title, intro, align = "center" }: SectionHeaderProps) => (
-  <div className={align === "center" ? "text-center max-w-3xl mx-auto mb-14" : "max-w-3xl mb-14"}>
+  <div
+    className={
+      align === "center"
+        ? "text-center max-w-3xl mx-auto mb-20 md:mb-24"
+        : "max-w-3xl mb-20 md:mb-24"
+    }
+  >
     {eyebrow && (
-      <p className="heading-serif-sm text-primary mb-5 reveal">{eyebrow}</p>
+      <p className="heading-serif-sm text-primary mb-7 reveal">{eyebrow}</p>
     )}
-    {align === "center" && <div className="gold-line mx-auto mb-8 reveal" />}
-    {align === "left" && <div className="gold-line mb-8 reveal" />}
-    <h2 className="heading-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-tight reveal">
+    {align === "center" && <div className="gold-line mx-auto mb-10 reveal" />}
+    {align === "left" && <div className="gold-line mb-10 reveal" />}
+    <h2 className="heading-display text-[32px] md:text-[44px] lg:text-[52px] text-foreground reveal">
       {title}
     </h2>
     {intro && (
-      <p className="text-muted-foreground text-base leading-relaxed mt-6 reveal">
+      <p className="body-refined text-base md:text-[17px] mt-8 reveal">
         {intro}
       </p>
     )}

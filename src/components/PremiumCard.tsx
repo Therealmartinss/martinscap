@@ -12,21 +12,29 @@ interface PremiumCardProps {
 const PremiumCard = ({ eyebrow, title, description, children, className }: PremiumCardProps) => (
   <div
     className={cn(
-      "group relative overflow-hidden border border-border/50 bg-card/30 backdrop-blur-sm p-8 md:p-10 transition-all duration-700 hover:border-primary/40 hover:bg-card/50",
+      "group relative overflow-hidden border border-border/40 bg-card/20 backdrop-blur-[2px]",
+      "p-10 md:p-12 transition-all duration-[900ms] ease-out",
+      "hover:border-primary/30 hover:bg-card/40 hover:-translate-y-[2px]",
       className,
     )}
   >
+    {/* Corner brackets — luxury hallmark */}
+    <span className="pointer-events-none absolute top-0 left-0 h-[14px] w-[14px] border-t border-l border-primary/0 group-hover:border-primary/60 transition-colors duration-700" />
+    <span className="pointer-events-none absolute top-0 right-0 h-[14px] w-[14px] border-t border-r border-primary/0 group-hover:border-primary/60 transition-colors duration-700" />
+    <span className="pointer-events-none absolute bottom-0 left-0 h-[14px] w-[14px] border-b border-l border-primary/0 group-hover:border-primary/60 transition-colors duration-700" />
+    <span className="pointer-events-none absolute bottom-0 right-0 h-[14px] w-[14px] border-b border-r border-primary/0 group-hover:border-primary/60 transition-colors duration-700" />
+
     {/* Top accent line */}
-    <div className="absolute top-0 left-0 h-px w-12 bg-primary/60 transition-all duration-700 group-hover:w-full group-hover:opacity-50" />
+    <div className="absolute top-0 left-0 h-px w-10 bg-primary/50 transition-all duration-[900ms] group-hover:w-full group-hover:opacity-30" />
 
     {eyebrow && (
-      <p className="heading-serif-sm text-primary/80 mb-4">{eyebrow}</p>
+      <p className="heading-serif-sm text-primary/70 mb-6">{eyebrow}</p>
     )}
-    <h3 className="heading-serif text-xl md:text-2xl text-foreground mb-4 tracking-wide">
+    <h3 className="heading-serif text-2xl md:text-[28px] text-foreground mb-5 leading-[1.2]">
       {title}
     </h3>
     {description && (
-      <p className="text-muted-foreground text-sm md:text-[15px] leading-relaxed">
+      <p className="body-refined text-[15px] leading-[1.8]">
         {description}
       </p>
     )}

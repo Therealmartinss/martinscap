@@ -72,8 +72,7 @@ const Contact = () => {
     setSubmitted(true);
   };
 
-  const inputCls =
-    "w-full bg-transparent border-b border-border/60 text-foreground text-sm py-3 px-1 placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300";
+  const inputCls = "input-premium";
 
   return (
     <SiteLayout>
@@ -112,16 +111,17 @@ const Contact = () => {
           <SectionHeader eyebrow={t("contact.form.eyebrow")} title={t("contact.form.title")} />
 
           {submitted ? (
-            <div className="reveal text-center py-10">
-              <p className="heading-serif text-xl md:text-2xl text-primary leading-relaxed max-w-lg mx-auto">
+            <div className="reveal text-center py-14">
+              <div className="gold-line mx-auto mb-8 opacity-60" />
+              <p className="heading-display text-2xl md:text-[32px] text-primary leading-[1.2] max-w-lg mx-auto">
                 {t("contact.success")}
               </p>
-              <p className="text-muted-foreground text-sm mt-4 max-w-md mx-auto">
+              <p className="body-refined text-sm mt-6 max-w-md mx-auto">
                 {t("contact.successSub")}
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="reveal space-y-6" noValidate>
+            <form onSubmit={onSubmit} className="reveal space-y-7" noValidate>
               <input
                 type="text"
                 placeholder={t("contact.field.name")}
@@ -152,7 +152,7 @@ const Contact = () => {
                 value={form.inquiryType}
                 onChange={handle("inquiryType")}
                 required
-                className={`${inputCls} appearance-none cursor-pointer`}
+                className={`${inputCls} appearance-none cursor-pointer ${!form.inquiryType ? "text-muted-foreground/40" : ""}`}
               >
                 <option value="" disabled className="bg-background">
                   {t("contact.field.inquiryType")}
@@ -170,15 +170,12 @@ const Contact = () => {
                 required
                 rows={5}
                 maxLength={2000}
-                className={`${inputCls} resize-none min-h-[140px]`}
+                className={`${inputCls} resize-none min-h-[160px] py-4`}
               />
               {error && (
-                <p className="text-destructive text-xs tracking-wide">{error}</p>
+                <p className="text-destructive text-xs tracking-[0.18em] uppercase">{error}</p>
               )}
-              <button
-                type="submit"
-                className="w-full mt-2 py-4 heading-serif-sm text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 tracking-[0.25em]"
-              >
+              <button type="submit" className="btn-premium w-full mt-4">
                 {t("contact.cta")}
               </button>
             </form>

@@ -59,49 +59,47 @@ const Index = () => {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-6 md:px-10 py-20">
-        <div className="mb-12 md:mb-16 animate-[fadeUp_2s_ease-out_both]">
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 md:px-10 py-24">
+        <div className="mb-14 md:mb-20 animate-[fadeUp_2s_ease-out_both]">
           <img
             src={mcLogoFull}
             alt="Martins Capital"
-            className="mx-auto w-[280px] md:w-[420px] lg:w-[520px] h-auto"
+            className="mx-auto w-[260px] md:w-[400px] lg:w-[500px] h-auto"
           />
         </div>
-        <h1 className="heading-serif text-2xl md:text-4xl lg:text-5xl text-foreground max-w-4xl leading-[1.2] mb-7 animate-[fadeUp_2s_ease-out_0.4s_both]">
+        <p className="heading-serif-sm text-primary/80 mb-8 animate-[fadeUp_2s_ease-out_0.3s_both]">
+          STRATEGIC HOLDING PLATFORM
+        </p>
+        <div className="gold-line mx-auto mb-10 animate-[fadeUp_2s_ease-out_0.4s_both]" />
+        <h1 className="heading-display text-[28px] md:text-[44px] lg:text-[56px] text-foreground max-w-4xl mb-10 animate-[fadeUp_2s_ease-out_0.5s_both]">
           {t("home.hero.headline")}
         </h1>
-        <p className="text-muted-foreground text-sm md:text-base max-w-2xl leading-relaxed animate-[fadeUp_2s_ease-out_0.7s_both]">
+        <p className="body-refined text-[15px] md:text-[17px] max-w-2xl animate-[fadeUp_2s_ease-out_0.8s_both]">
           {t("home.hero.sub")}
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-12 animate-[fadeUp_2s_ease-out_1s_both]">
-          <a
-            href="#verticals"
-            className="group inline-flex items-center justify-center gap-3 heading-serif-sm tracking-[0.25em] text-primary-foreground bg-primary px-8 py-4 hover:bg-primary/90 transition-all duration-500"
-          >
+        <div className="flex flex-col sm:flex-row items-center gap-5 mt-14 animate-[fadeUp_2s_ease-out_1.1s_both]">
+          <a href="#verticals" className="btn-premium group">
             {t("home.hero.ctaPrimary")}
-            <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1" />
+            <ArrowRight size={13} strokeWidth={1.25} className="transition-transform duration-700 group-hover:translate-x-1" />
           </a>
-          <Link
-            to="/briefing"
-            className="inline-flex items-center justify-center gap-3 heading-serif-sm tracking-[0.25em] text-primary border border-primary/30 px-8 py-4 hover:bg-primary/5 transition-all duration-500"
-          >
+          <Link to="/briefing" className="btn-ghost-premium">
             {t("home.hero.ctaSecondary")}
           </Link>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-[fadeUp_2s_ease-out_1.5s_both]">
-          <div className="w-px h-12 bg-primary opacity-20" />
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-[fadeUp_2s_ease-out_1.6s_both]">
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
         </div>
       </section>
 
       {/* Institutional Overview */}
       <section className="section-spacing">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <p className="heading-serif-sm text-primary mb-6 reveal">{t("home.overview.eyebrow")}</p>
-          <div className="gold-line mx-auto mb-10 reveal" />
-          <h2 className="heading-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-tight reveal">
+          <p className="heading-serif-sm text-primary mb-7 reveal">{t("home.overview.eyebrow")}</p>
+          <div className="gold-line mx-auto mb-12 reveal" />
+          <h2 className="heading-display text-[30px] md:text-[44px] lg:text-[52px] text-foreground reveal">
             {t("home.overview.title")}
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-8 max-w-2xl mx-auto reveal">
+          <p className="body-refined text-base md:text-[17px] mt-10 max-w-2xl mx-auto reveal">
             {t("home.overview.body")}
           </p>
         </div>
@@ -167,17 +165,18 @@ const Index = () => {
             eyebrow={t("home.why.eyebrow")}
             title={t("home.why.title")}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border/40 border border-border/40">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border/30 border border-border/30">
             {why.map((label, i) => (
               <div
                 key={label}
-                className="reveal bg-background/60 backdrop-blur-sm p-8 text-center min-h-[160px] flex flex-col items-center justify-center group hover:bg-card/40 transition-colors duration-700"
+                className="reveal bg-background/40 backdrop-blur-sm p-10 text-center min-h-[200px] flex flex-col items-center justify-center group hover:bg-card/50 transition-all duration-700 relative overflow-hidden"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <span className="heading-serif-sm text-primary mb-3 opacity-70">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-0 bg-primary/60 transition-all duration-700 group-hover:w-12" />
+                <span className="heading-serif-sm text-primary/70 mb-5 text-[10px]">
                   0{i + 1}
                 </span>
-                <p className="heading-serif text-base md:text-lg text-foreground leading-snug tracking-wide">
+                <p className="heading-serif text-[17px] md:text-[19px] text-foreground leading-[1.3] tracking-wide">
                   {label}
                 </p>
               </div>
@@ -189,12 +188,12 @@ const Index = () => {
       {/* Briefing Capture */}
       <section className="section-spacing">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
-          <p className="heading-serif-sm text-primary mb-6 reveal">{t("home.briefing.eyebrow")}</p>
-          <div className="gold-line mx-auto mb-10 reveal" />
-          <h2 className="heading-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-tight mb-6 reveal">
+          <p className="heading-serif-sm text-primary mb-7 reveal">{t("home.briefing.eyebrow")}</p>
+          <div className="gold-line mx-auto mb-12 reveal" />
+          <h2 className="heading-display text-[30px] md:text-[44px] lg:text-[52px] text-foreground mb-8 reveal">
             {t("home.briefing.title")}
           </h2>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-xl mx-auto mb-12 reveal">
+          <p className="body-refined text-base md:text-[17px] max-w-xl mx-auto mb-16 reveal">
             {t("home.briefing.body")}
           </p>
           <BriefingForm />

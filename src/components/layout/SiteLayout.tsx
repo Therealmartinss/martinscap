@@ -21,7 +21,7 @@ const SiteLayout = ({ children }: SiteLayoutProps) => {
     <div className="relative min-h-screen flex flex-col">
       <TexturedBackground />
       <TopNav />
-      <main className="relative z-10 flex-1 pt-16 md:pt-20">{children}</main>
+      <main className="relative z-10 flex-1 pt-20 md:pt-24">{children}</main>
       <div className="relative z-10">
         <SiteFooter />
       </div>
