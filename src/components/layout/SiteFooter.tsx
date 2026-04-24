@@ -60,8 +60,22 @@ const SiteFooter = () => {
           <p className="heading-serif-sm text-muted-foreground/50 mb-7 text-[10px]">
             {t("footer.contact")}
           </p>
-          <ul className="space-y-4 text-[13px] text-muted-foreground/80">
+          <ul className="space-y-5 text-[13px] text-muted-foreground/80">
             <li>
+              <p className="heading-serif-sm text-muted-foreground/40 text-[9px] mb-2">
+                {t("footer.phone")}
+              </p>
+              <a
+                href="tel:+19292750461"
+                className="heading-serif text-[18px] md:text-[20px] text-foreground hover:text-primary transition-colors duration-500 tracking-wide tabular-nums"
+              >
+                +1 929 275 0461
+              </a>
+            </li>
+            <li>
+              <p className="heading-serif-sm text-muted-foreground/40 text-[9px] mb-2">
+                {t("footer.email")}
+              </p>
               <a
                 href="mailto:contact@martinscap.com.br"
                 className="hover:text-primary transition-colors duration-500 tracking-wide"
@@ -69,15 +83,8 @@ const SiteFooter = () => {
                 contact@martinscap.com.br
               </a>
             </li>
-            <li className="tracking-wide">martinscap.com.br</li>
+            <li className="tracking-wide text-muted-foreground/60">martinscap.com.br</li>
           </ul>
-          <div className="flex items-center gap-5 mt-9 text-[10px] heading-serif-sm tracking-[0.28em] text-muted-foreground/50">
-            <a href="#" className="hover:text-primary transition-colors duration-500">LINKEDIN</a>
-            <span className="opacity-30">·</span>
-            <a href="#" className="hover:text-primary transition-colors duration-500">X</a>
-            <span className="opacity-30">·</span>
-            <a href="#" className="hover:text-primary transition-colors duration-500">INSTAGRAM</a>
-          </div>
         </div>
       </div>
 

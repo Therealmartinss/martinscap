@@ -28,6 +28,11 @@ const translations: Record<string, Record<Lang, string>> = {
   "footer.briefingCta": { en: "JOIN THE BRIEFING", pt: "RECEBER O RELATÓRIO" },
   "footer.navigate": { en: "NAVIGATION", pt: "NAVEGAÇÃO" },
   "footer.contact": { en: "CONTACT", pt: "CONTATO" },
+  "footer.phone": { en: "DIRECT LINE — NEW YORK", pt: "LINHA DIRETA — NOVA YORK" },
+  "footer.email": { en: "EMAIL", pt: "E-MAIL" },
+  "contact.direct.eyebrow": { en: "DIRECT CONTACT", pt: "CONTATO DIRETO" },
+  "contact.direct.phoneLabel": { en: "DIRECT LINE — NEW YORK", pt: "LINHA DIRETA — NOVA YORK" },
+  "contact.direct.emailLabel": { en: "EMAIL", pt: "E-MAIL" },
   "footer.copy": { en: "© 2026 Martins Capital — martinscap.com.br", pt: "© 2026 Martins Capital — martinscap.com.br" },
   "footer.tagSmall": { en: "STRUCTURE · SELECTIVITY · LONG-TERM VALUE", pt: "ESTRUTURA · SELETIVIDADE · VALOR DE LONGO PRAZO" },
 
