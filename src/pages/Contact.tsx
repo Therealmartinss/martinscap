@@ -106,6 +106,38 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Direct contact block */}
+      <section className="section-spacing-tight">
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-px bg-border/30 border border-border/30">
+            <div className="bg-background/40 p-12 md:p-14 group hover:bg-card/40 transition-all duration-700">
+              <p className="heading-serif-sm text-primary/70 mb-5 text-[10px]">
+                {t("contact.direct.phoneLabel")}
+              </p>
+              <a
+                href="tel:+19292750461"
+                className="heading-display text-[26px] md:text-[34px] text-foreground hover:text-primary transition-colors duration-500 tracking-wide tabular-nums block"
+              >
+                +1 929 275 0461
+              </a>
+              <div className="gold-line mt-8 opacity-50" />
+            </div>
+            <div className="bg-background/40 p-12 md:p-14 group hover:bg-card/40 transition-all duration-700">
+              <p className="heading-serif-sm text-primary/70 mb-5 text-[10px]">
+                {t("contact.direct.emailLabel")}
+              </p>
+              <a
+                href="mailto:contact@martinscap.com.br"
+                className="heading-display text-[22px] md:text-[28px] text-foreground hover:text-primary transition-colors duration-500 tracking-wide block break-all"
+              >
+                contact@martinscap.com.br
+              </a>
+              <div className="gold-line mt-8 opacity-50" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-spacing">
         <div className="max-w-2xl mx-auto px-6 md:px-10">
           <SectionHeader eyebrow={t("contact.form.eyebrow")} title={t("contact.form.title")} />
