@@ -51,11 +51,11 @@ const PageHero = ({
           {headline}
         </h1>
         {intro && (
-          <p className={cn("body-refined text-base md:text-[17px] mt-10 animate-[fadeUp_1.4s_ease-out_0.4s_both]", centered ? "max-w-2xl mx-auto" : "max-w-2xl") }>
+          <p className={cn("body-refined text-base md:text-[17px] mt-10 animate-[fadeUp_1.4s_ease-out_0.4s_both]", centered ? "max-w-2xl mx-auto" : "max-w-2xl")}>
             {intro}
           </p>
         )}
-        {children && <div className="mt-12 animate-[fadeUp_1.4s_ease-out_0.6s_both]">{children}</div>}</n>
+        {children && <div className="mt-12 animate-[fadeUp_1.4s_ease-out_0.6s_both]">{children}</div>}
       </div>
     </section>
   );
