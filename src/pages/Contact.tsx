@@ -31,6 +31,7 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const inquiryTypes = [
     t("contact.card.partnerships"),
@@ -52,11 +53,28 @@ const Contact = () => {
       setForm((prev) => ({ ...prev, [k]: e.target.value }));
     };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
+      setError(t("contact.error"));
+      return;
+    }
+    setSubmitting(true);
+    const { error: dbError } = await supabase
+      .from("contact_inquiries")
+      .insert({
+        name: parsed.data.name,
+        email: parsed.data.email,
+        company: parsed.data.company || null,
+        inquiry_type: parsed.data.inquiryType,
+        message: parsed.data.message,
+        source_page: "contact",
+      });
+    setSubmitting(false);
+    if (dbError) {
+      console.error("Contact submission failed:", dbError);
       setError(t("contact.error"));
       return;
     }
