@@ -176,7 +176,7 @@ const Contact = () => {
               </select>
               <textarea placeholder={t("contact.field.message")} value={form.message} onChange={handle("message")} required rows={5} maxLength={2000} className={`${inputCls} resize-none min-h-[160px] py-4`} />
               {error && <p className="text-destructive text-xs tracking-[0.18em] uppercase">{error}</p>}
-              <button type="submit" className="btn-premium w-full mt-4">{t("contact.cta")}</button>
+              <button type="submit" disabled={submitting} className="btn-premium w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed">{submitting ? "…" : t("contact.cta")}</button>
             </form>
           )}
         </div>
