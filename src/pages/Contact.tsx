@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Mail, Handshake, Newspaper, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 import SiteLayout from "@/components/layout/SiteLayout";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
