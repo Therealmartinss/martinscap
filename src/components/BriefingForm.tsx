@@ -29,12 +29,28 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
   const [interest, setInterest] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     const parsed = schema.safeParse({ firstName, email, interest });
     if (!parsed.success) {
+      setError(t("briefing.error"));
+      return;
+    }
+    setSubmitting(true);
+    const { error: dbError } = await supabase
+      .from("briefing_subscribers")
+      .insert({
+        first_name: parsed.data.firstName,
+        email: parsed.data.email,
+        interest_area: parsed.data.interest,
+        source_page: "briefing",
+      });
+    setSubmitting(false);
+    if (dbError) {
+      console.error("Briefing submission failed:", dbError);
       setError(t("briefing.error"));
       return;
     }
