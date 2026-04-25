@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 interface BriefingFormProps {
   variant?: "compact" | "full";
