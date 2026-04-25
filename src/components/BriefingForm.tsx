@@ -117,8 +117,8 @@ const BriefingForm = ({ variant = "full", className }: BriefingFormProps) => {
       {error && (
         <p className="text-destructive text-xs tracking-[0.18em] uppercase">{error}</p>
       )}
-      <button type="submit" className="btn-premium w-full mt-4">
-        {t("briefing.cta")}
+      <button type="submit" disabled={submitting} className="btn-premium w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed">
+        {submitting ? "…" : t("briefing.cta")}
       </button>
     </form>
   );
