@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Mail, Handshake, Newspaper, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 import SiteLayout from "@/components/layout/SiteLayout";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
@@ -30,6 +31,7 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const inquiryTypes = [
     t("contact.card.partnerships"),
@@ -51,11 +53,28 @@ const Contact = () => {
       setForm((prev) => ({ ...prev, [k]: e.target.value }));
     };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
+      setError(t("contact.error"));
+      return;
+    }
+    setSubmitting(true);
+    const { error: dbError } = await supabase
+      .from("contact_inquiries")
+      .insert({
+        name: parsed.data.name,
+        email: parsed.data.email,
+        company: parsed.data.company || null,
+        inquiry_type: parsed.data.inquiryType,
+        message: parsed.data.message,
+        source_page: "contact",
+      });
+    setSubmitting(false);
+    if (dbError) {
+      console.error("Contact submission failed:", dbError);
       setError(t("contact.error"));
       return;
     }
@@ -157,7 +176,7 @@ const Contact = () => {
               </select>
               <textarea placeholder={t("contact.field.message")} value={form.message} onChange={handle("message")} required rows={5} maxLength={2000} className={`${inputCls} resize-none min-h-[160px] py-4`} />
               {error && <p className="text-destructive text-xs tracking-[0.18em] uppercase">{error}</p>}
-              <button type="submit" className="btn-premium w-full mt-4">{t("contact.cta")}</button>
+              <button type="submit" disabled={submitting} className="btn-premium w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed">{submitting ? "…" : t("contact.cta")}</button>
             </form>
           )}
         </div>
